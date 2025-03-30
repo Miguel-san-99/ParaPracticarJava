@@ -2,7 +2,7 @@ package Logica;
 
 public class Alumno extends Persona{
     
-    String carrera;
+    private String carrera;
 
     public Alumno() {
     }

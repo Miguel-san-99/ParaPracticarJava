@@ -1,17 +1,17 @@
 package Logica;
 
 public abstract class Persona {
-    int id;
-    String dni;
-    String nombre;
-    String apellido;
-    String domicilio;
-    String telefono;
+    protected int id;
+    protected String dni;
+    protected String nombre;
+    protected String apellido;
+    protected String domicilio;
+    protected String telefono;
     
-    public Persona() {
+    protected Persona() {
     }
 
-    public Persona(int id, String dni, String nombre, String apellido, String domicilio, String telefono) {
+    protected Persona(int id, String dni, String nombre, String apellido, String domicilio, String telefono) {
         this.id = id;
         this.dni = dni;
         this.nombre = nombre;

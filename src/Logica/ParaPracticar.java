@@ -140,10 +140,10 @@ public class ParaPracticar {
     }
     public static void polimorfismo(){
         Persona vector [] = new Persona [5];
-        vector[0] = new Persona();
+        vector[0] = new Alumno();
         vector[1] = new Alumno();
         
-        Persona perso = new Persona();
+        Persona perso = new Alumno();
         Alumno alu = new Alumno();
         
         perso = alu;
