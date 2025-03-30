@@ -14,7 +14,7 @@ public class ParaPracticar {
         pantalla.setLocationRelativeTo(null);
         pantalla.setVisible(true);
         **/
-        crearClaseAlumno();
+        sobrecarga();
     }
     public static void sentencias_if_else(){
         /**
@@ -124,7 +124,7 @@ public class ParaPracticar {
     }
     public static void crearClaseAlumno(){
         Alumno alumno1 = new Alumno();
-        Alumno alumno2 = new Alumno(3, "Angel", "Magaña");
+        Alumno alumno2 = new Alumno("Computacion", 3, "2", "Angel", "Magaña", "Santa fe", "3313293049");
         System.out.println("La id del alumno2 es: " + alumno2.getId());
         System.out.println("El nombre es: " + alumno2.getNombre());
         System.out.println("El apellido es: " + alumno2.getApellido());
@@ -136,5 +136,25 @@ public class ParaPracticar {
         System.out.println("El nombre es: " + alumno1.getNombre());
         System.out.println("El apellido es: " + alumno1.getApellido());
         System.out.println("----------------------");
+        alumno2.setId(35);
+    }
+    public static void polimorfismo(){
+        Persona vector [] = new Persona [5];
+        vector[0] = new Persona();
+        vector[1] = new Alumno();
+        
+        Persona perso = new Persona();
+        Alumno alu = new Alumno();
+        
+        perso = alu;
+    }
+    public static void sobrecarga(){
+        Alumno alu = new Alumno();
+        alu.saludar();
+        alu.saludar("Miguel");
+        alu.saludar("Miguel", 25);
+        Profesor profe = new Profesor();
+        profe.reir();
+        alu.reir();
     }
 }

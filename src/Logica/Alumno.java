@@ -1,41 +1,23 @@
 package Logica;
 
-public class Alumno {
-    int id;
-    String nombre;
-    String apellido;
+public class Alumno extends Persona{
+    
+    String carrera;
 
     public Alumno() {
     }
 
-    public Alumno(int id, String nombre, String apellido) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
+    public Alumno(String carrera, int id, String dni, String name, String apellido, String domicilio, String telefono) {
+        super(id, dni, name, apellido, domicilio, telefono);
+        this.carrera = carrera;
     }
 
-    public int getId() {
-        return id;
+    public String getCarrera() {
+        return carrera;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
     }
     
     
@@ -48,4 +30,20 @@ public class Alumno {
             System.out.println("El alumno esta reprobado");
         }
     }
+    
+    public void saludar(){
+        System.out.println("Hola soy un alumno");
+    }
+    public void saludar(String name){
+        System.out.println("Hola soy un alumno y me dicen: " + name);
+    }
+    public void saludar(String name, int edad){
+        System.out.println("Hola soy un alumno y me dicen " + name + " y tengo " + edad);
+    }
+
+    @Override
+    public void reir() {
+        System.out.println("Soy un alumno y asi rio jejejejeje");
+    }
+    
 }
