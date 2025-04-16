@@ -1,20 +1,29 @@
 package Logica;
 
 import Gui.Pantalla;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Stack;
 
 /**
  *
  * @author sanchezmagana
  */
 public class ParaPracticar {
+    enum Color {
+            ROJO, VERDE, AZUL, AMARILLO, ANARANJADO, NEGRO, BLANCO
+        }
     public static void main(String[] args) {
         /**
         Pantalla pantalla = new Pantalla();
         pantalla.setLocationRelativeTo(null);
         pantalla.setVisible(true);
         **/
-        sobrecarga();
+        ejemploEnum();
     }
     public static void sentencias_if_else(){
         /**
@@ -140,10 +149,10 @@ public class ParaPracticar {
     }
     public static void polimorfismo(){
         Persona vector [] = new Persona [5];
-        vector[0] = new Persona();
+        vector[0] = new Alumno();
         vector[1] = new Alumno();
         
-        Persona perso = new Persona();
+        Alumno perso = new Alumno();
         Alumno alu = new Alumno();
         
         perso = alu;
@@ -156,5 +165,98 @@ public class ParaPracticar {
         Profesor profe = new Profesor();
         profe.reir();
         alu.reir();
+    }
+    public static void listas(){
+        List<Alumno> lista = new ArrayList<Alumno>();
+        Alumno alu = new Alumno();
+        lista.add(alu);
+        
+        LinkedList<Alumno> listaLinked = new LinkedList<Alumno>();
+        Alumno alu2 = new Alumno();
+        listaLinked.add(alu);
+        listaLinked.add(alu2);
+        
+        lista.remove(0);
+        
+        System.out.println("Tamaño de la lista: " + listaLinked.size());
+        System.out.println("Primero de la lista: " + listaLinked.getFirst());
+        System.out.println("Primero de la lista: " + listaLinked.getLast());
+        
+        listaLinked.clear();
+        
+        System.out.println("Esta vacia? " + listaLinked.isEmpty());
+        
+        
+        
+    }
+    public static void pilas(){
+        Stack<Integer> pila = new Stack<Integer>();
+        System.out.println("Pilas vacia:" + pila);
+        System.out.println("Esta vacia?" + pila.isEmpty());
+        pila.add(1);
+        pila.add(2);
+        pila.pop();
+        System.out.println("Muestra el ultimo valor agregado. " + pila.peek());
+    }
+    public static void hashmap(){
+        Map<Integer, String> mapaEmpleados = new HashMap<>();
+        mapaEmpleados.put(1524, "Miguel");
+        mapaEmpleados.put(1525, "Angel");
+        
+        boolean estaono = mapaEmpleados.containsValue("Miguel");
+        boolean estaono2 = mapaEmpleados.containsKey(1524);
+        
+        System.out.println(estaono);
+        System.out.println(estaono2);
+        
+        System.out.println(mapaEmpleados.values());
+        System.out.println(mapaEmpleados.keySet());
+        
+        String nombre = mapaEmpleados.get(1524);
+        System.out.println(nombre);
+        mapaEmpleados.remove(1524);
+        System.out.println(mapaEmpleados);
+    }
+    public static void excepciones(){
+        
+        int edades [] = {15, 20, 25, 30};
+        
+        try{
+            System.out.println("La edad de la posicion 4 es: " + edades[4]);
+        }
+        catch(Exception e){
+            System.out.println("Intentaste acceder a un indice que no existe");
+        }
+    }
+    public static void conversiones(){
+        
+        double num = 1.67;
+        
+        //Casteo a entero
+        int numInt = (int) num;
+        
+        //Casteo a long
+        long numLong = (long) num;
+        
+        String cantidad = "15";
+        String precio = "150.27";
+        int cantInt = Integer.parseInt(cantidad);
+        double precioDouble = Double.parseDouble(precio);
+        
+        int edad = 30;
+        double estatura = 1.67;
+        
+        String edadString = String.valueOf(edad);
+        String estaturaString = String.valueOf(estatura);
+        
+        System.out.println("Edad: " + edadString + " Estatura: " + estaturaString);
+        
+    }
+    public static void ejemploEnum(){
+        
+        for(Color c : Color.values()){
+            System.out.println("EL color es: " + c);
+        }
+        
     }
 }
