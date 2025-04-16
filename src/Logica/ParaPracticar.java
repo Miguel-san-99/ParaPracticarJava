@@ -152,7 +152,11 @@ public class ParaPracticar {
         vector[0] = new Alumno();
         vector[1] = new Alumno();
         
+<<<<<<< HEAD
         Alumno perso = new Alumno();
+=======
+        Persona perso = new Alumno();
+>>>>>>> refs/remotes/origin/main
         Alumno alu = new Alumno();
         
         perso = alu;
